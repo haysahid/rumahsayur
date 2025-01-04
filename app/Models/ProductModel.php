@@ -39,8 +39,6 @@ class ProductModel extends Model
         'selling_price' => 'required',
         'initial_stock' => 'required',
         'unit' => 'required',
-        'category' => 'nullable',
-        'expired_at' => 'nullable',
         'store_id' => 'required',
     ];
     protected $validationMessages = [
@@ -67,7 +65,7 @@ class ProductModel extends Model
         ],
     ];
     protected $skipValidation = false;
-    
+
     // Callbacks
     protected $allowCallbacks = true;
     protected $beforeInsert = [];
