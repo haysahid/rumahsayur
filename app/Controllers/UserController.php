@@ -10,7 +10,7 @@ class UserController extends BaseController
     public function index()
     {
         $userModel = model('UserModel');
-        $users = $userModel->findAll();
+        $users = $userModel->where('disabled_at', null)->findAll();
 
         // Get Roles
         for ($i = 0; $i < count($users); $i++) {
@@ -22,5 +22,13 @@ class UserController extends BaseController
         return view('user', [
             'users' => $users,
         ]);
+    }
+
+    public function delete($id)
+    {
+        $userModel = model('UserModel');
+        $userModel->update($id, ['disabled_at' => date('Y-m-d H:i:s')]);
+
+        return redirect()->to(base_url('user') . '?success=User berhasil dihapus');
     }
 }

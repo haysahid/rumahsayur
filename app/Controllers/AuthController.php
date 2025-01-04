@@ -34,6 +34,7 @@ class AuthController extends BaseController
             'id' => $user['id'],
             'email' => $user['email'],
             'name' => $user['name'],
+            'role_id' => $user['role_id'],
         ]);
 
         return redirect()->to(base_url('dashboard'));
@@ -75,7 +76,8 @@ class AuthController extends BaseController
         session()->remove('id');
         session()->remove('email');
         session()->remove('name');
+        session()->remove('role_id');
 
-        return view('login');
+        return redirect()->to(base_url('/'));
     }
 }

@@ -139,7 +139,7 @@
             let result = confirm(`Apakah Anda yakin ingin menghapus artikel "${name}"?`);
 
             if (result) {
-                window.location.href = `user/delete_process.php?id=${id}`;
+                window.location.href = `<?= base_url('user/delete') ?>/${id}`;
             }
         }
     </script>

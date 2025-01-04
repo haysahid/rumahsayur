@@ -36,24 +36,6 @@
                     </a>
                 </div>
 
-                <!-- Kelola Toko -->
-                <div class="flex items-center justify-between gap-4 p-5 bg-white border rounded-lg">
-                    <div>
-                        <h3 class="mb-3 text-lg font-semibold">
-                            Toko
-                        </h3>
-                        <p class="text-gray-500">
-                            Kelola Toko
-                        </p>
-                        <a href="<?php echo base_url('store') ?>">
-                            <button type="button" class="py-2 mt-3 text-sm font-semibold text-white bg-blue-500 border border-blue-500 rounded hover:bg-blue-600 px-7 hover:border-blue-600">
-                                Kelola Toko
-                            </button>
-                    </div>
-                    <p class="p-5 text-4xl"><?php echo $total_store; ?></p>
-                    </a>
-                </div>
-
                 <!-- Kelola Produk -->
                 <div class="flex items-center justify-between gap-4 p-5 bg-white border rounded-lg">
                     <div>
