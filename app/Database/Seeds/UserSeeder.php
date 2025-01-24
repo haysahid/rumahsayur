@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'username' => 'admin',
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com',
-                'password' => password_hash('admin2024', PASSWORD_DEFAULT),
+                'password' => password_hash('admin', PASSWORD_DEFAULT),
                 'role_id' => 2,
             ],
             [

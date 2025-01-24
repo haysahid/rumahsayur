@@ -34,7 +34,7 @@
         <div data-aos="fade-up" data-aos-delay="50" class="flex gap-8 mt-5 max-sm:flex-col">
             <!-- Form -->
             <div class="w-full">
-                <h3 class="mb-3 text-lg font-semibold">Tambah Produk</h3>
+                <h3 class="mb-3 text-lg font-semibold">Ubah Produk</h3>
                 <form action="<?= base_url('product/update-action') . '/' . $product['id'] ?>" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
