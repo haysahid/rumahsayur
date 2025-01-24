@@ -18,7 +18,6 @@
                         <p><?= session()->get('name') ?></p>
                     </div>
                     <div class="absolute right-0 z-50 hidden w-40 py-2 bg-white border border-gray-200 shadow-md top-12">
-                        <a href="<?= base_url('profile') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
                         <a href="<?= base_url('logout') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Keluar</a>
                     </div>
                 </div>
@@ -31,7 +30,6 @@
                         <p><?= session()->get('name') ?></p>
                     </div>
                     <div class="absolute right-0 z-50 hidden w-40 py-2 bg-white border border-gray-200 shadow-md top-12">
-                        <a href="<?= base_url('profile') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
                         <a href="<?= base_url('logout') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Keluar</a>
                     </div>
                 </div>
