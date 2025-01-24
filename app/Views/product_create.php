@@ -38,31 +38,31 @@
                 <form action="<?= base_url('product/create-action') ?>" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-                        <input type="text" name="name" id="name" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="text" name="name" id="name" placeholder="Masukkan nama produk" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                        <input type="text" name="description" id="description" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="text" name="description" id="description" placeholder="Masukkan deskripsi produk" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="purchase_price" class="block text-sm font-medium text-gray-700">Harga Beli</label>
-                        <input type="number" name="purchase_price" id="purchase_price" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="number" name="purchase_price" id="purchase_price" placeholder="Masukkan harga beli" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="selling_price" class="block text-sm font-medium text-gray-700">Harga Jual</label>
-                        <input type="number" name="selling_price" id="selling_price" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="number" name="selling_price" id="selling_price" placeholder="Masukkan harga jual" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="initial_stock" class="block text-sm font-medium text-gray-700">Stok Awal</label>
-                        <input type="number" name="initial_stock" id="initial_stock" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="number" name="initial_stock" id="initial_stock" placeholder="Masukkan stok awal" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="unit" class="block text-sm font-medium text-gray-700">Satuan</label>
-                        <input type="text" name="unit" id="unit" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="text" name="unit" id="unit" placeholder="Masukkan satuan" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="category" class="block text-sm font-medium text-gray-700">Kategori</label>
-                        <input type="text" name="category" id="category" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="text" name="category" id="category" placeholder="Masukkan kategori" class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
                     <div class="mb-3">
                         <label for="image" class="block text-sm font-medium text-gray-700">Gambar</label>

@@ -9,8 +9,18 @@ class ProductController extends BaseController
 {
     public function index()
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         $productModel = model('ProductModel');
-        $products = $productModel->findAll();
+        $products = $productModel->orderBy('id', 'desc')->findAll();
 
         // Get Image
         for ($i = 0; $i < count($products); $i++) {
@@ -28,11 +38,31 @@ class ProductController extends BaseController
 
     public function createView()
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         return view('product_create');
     }
 
     public function create()
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         $productModel = model('ProductModel');
 
         $product = [
@@ -71,6 +101,16 @@ class ProductController extends BaseController
 
     public function updateView($id)
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         $productModel = model('ProductModel');
         $product = $productModel->find($id);
 
@@ -88,6 +128,16 @@ class ProductController extends BaseController
 
     public function update($id)
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         $productModel = model('ProductModel');
 
         $product = [
@@ -127,6 +177,16 @@ class ProductController extends BaseController
 
     public function delete($id)
     {
+        // Check session
+        if (!session()->get('id')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        // Check role
+        if (session()->get('role_id') > 2) {
+            return redirect()->to(base_url('/'));
+        }
+
         $productModel = model('ProductModel');
         $productModel->delete($id);
 

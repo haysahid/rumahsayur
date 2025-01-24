@@ -97,7 +97,10 @@
                                             </div>
                                         <?php } ?>
 
-                                        <span class="text-sm font-semibold"><?php echo $selectedUser['name']; ?></span>
+                                        <div>
+                                            <p class="text-sm font-semibold"><?php echo $selectedUser['name']; ?></p>
+                                            <p><?php echo $selectedUser['username']; ?></p>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="px-4 py-2 border">
@@ -112,7 +115,7 @@
                                 <td class="px-4 py-2 border">
 
                                     <div class="flex items-center justify-center gap-2">
-                                        <a href="user/update.php?id=<?php echo $selectedUser['id']; ?>">
+                                        <a href="<?= base_url('user/update') . '/' . $selectedUser['id'] ?>">
                                             <button type="button" class="px-4 py-2 text-sm font-semibold text-white bg-blue-500 border border-blue-500 rounded hover:bg-blue-600 hover:border-blue-600">
                                                 Ubah
                                             </button>

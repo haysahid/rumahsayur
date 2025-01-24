@@ -10,7 +10,7 @@ class HomeController extends BaseController
     public function index()
     {
         $productModel = model('ProductModel');
-        $products = $productModel->findAll();
+        $products = $productModel->orderBy('id', 'desc')->findAll();
 
         // Get Image
         for ($i = 0; $i < count($products); $i++) {

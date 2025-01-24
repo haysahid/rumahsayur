@@ -15,6 +15,7 @@ class UserModel extends Model
 
     protected $allowedFields = [
         'name',
+        'username',
         'email',
         'password',
         'phone',
@@ -32,13 +33,16 @@ class UserModel extends Model
     // Validation
     protected $validationRules = [
         'name' => 'required',
+        'username' => 'required|is_unique[users.username,id,{id}]',
         'email' => 'required|valid_email|is_unique[users.email,id,{id}]',
         'password' => 'required|min_length[8]',
-        'phone' => 'nullable',
-        'address' => 'nullable',
         'role_id' => 'required',
     ];
     protected $validationMessages = [
+        'username' => [
+            'required' => 'Username harus diisi',
+            'is_unique' => 'Username sudah terdaftar',
+        ],
         'email' => [
             'required' => 'Email harus diisi',
             'valid_email' => 'Email tidak valid',

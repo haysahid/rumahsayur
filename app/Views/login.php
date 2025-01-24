@@ -31,10 +31,31 @@
             }
             ?>
 
+            <!-- Success Message -->
+            <?php
+            if (isset($_GET['success'])) {
+            ?>
+                <div data-aos="fade-up" class="flex w-full gap-2 p-4 mb-4 bg-green-100 rounded-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-600 size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p class="w-full text-green-600"><?php echo $_GET['success']; ?></p>
+                    <a href="<?= base_url('product') ?>">
+                        <button type="button" class="text-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            <?php
+            }
+            ?>
+
             <form action="<?= base_url('login-action') ?>" method="POST">
                 <div class="mb-4">
-                    <label for="email" class="block mb-1 text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <label for="username" class="block mb-1 text-gray-700">Username</label>
+                    <input type="username" id="username" name="username" placeholder="Masukkan username" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 <div class="mb-6">
                     <label for="password" class="block mb-1 text-gray-700">Password</label>

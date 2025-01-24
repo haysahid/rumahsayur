@@ -33,18 +33,18 @@
         <!-- Products -->
         <section class="px-6 md:px-[10%] py-6 mx-auto">
             <h2 data-aos="fade-up" data-aos-delay="50" class="text-2xl font-semibold">Produk Terbaru</h2>
-            <div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 xl:grid-cols-3">
+            <div class="grid grid-cols-1 gap-6 mt-6 gap-x-12 md:grid-cols-2 xl:grid-cols-3">
                 <?php foreach ($products as $product) { ?>
-                    <div data-aos="fade-up" class="flex py-8 overflow-hidden bg-white border-b rounded gap-x-8 gap-y-4 max-sm:flex-col border-b-slate-200">
+                    <div data-aos="fade-up" class="flex items-center py-8 overflow-hidden bg-white border-b rounded gap-x-6 gap-y-4 max-sm:flex-col border-b-slate-200">
                         <?php
                         if (isset($product['image'])) {
                         ?>
                             <img
                                 src="../uploads/<?= $product['image'] ?>"
                                 alt="Product Image"
-                                class="object-cover w-full rounded-lg sm:w-2/4 aspect-square">
+                                class="object-cover w-full rounded-lg sm:w-2/4 sm:aspect-square">
                         <?php } else { ?>
-                            <div class="relative w-full rounded-lg sm:w-2/4 aspect-square bg-slate-300">
+                            <div class="relative w-full rounded-lg sm:w-2/4 sm:aspect-square bg-slate-300">
                                 <div class="flex items-center justify-center w-full h-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 fill-white">
                                         <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" />
@@ -56,7 +56,7 @@
                         <?php } ?>
 
 
-                        <div class="w-3/4">
+                        <div class="w-3/4 max-sm:w-full">
                             <h3 class="text-lg font-semibold"><?= $product['name']; ?></h3>
                             <div class="flex items-center gap-2 mt-1">
                                 <p class="text-xs text-neutral-500"><?= $product['category']; ?></p>

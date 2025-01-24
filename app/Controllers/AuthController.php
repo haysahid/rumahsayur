@@ -14,30 +14,34 @@ class AuthController extends BaseController
 
     public function login()
     {
-        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
         $userModel = model('UserModel');
 
-        $user = $userModel->where('email', $email)->first();
+        $user = $userModel->where('username', $username)->first();
 
         if (!$user) {
-            return redirect()->to(base_url('login') . '?error=Email tidak ditemukan')->withInput();
+            return redirect()->to(base_url('login') . '?error=Pengguna tidak ditemukan')->withInput();
         }
 
         if (!password_verify($password, $user['password'])) {
-            return redirect()->to(base_url('login')  . '?error=Email tidak ditemukan')->withInput();
+            return redirect()->to(base_url('login')  . '?error=Pengguna tidak ditemukan')->withInput();
         }
 
         // Set session
         session()->set([
             'id' => $user['id'],
-            'email' => $user['email'],
+            'username' => $user['username'],
             'name' => $user['name'],
             'role_id' => $user['role_id'],
         ]);
 
-        return redirect()->to(base_url('dashboard'));
+        if ($user['role_id'] == 1 || $user['role_id'] == 2) {
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        return redirect()->to(base_url('/'));
     }
 
     public function registerView()
@@ -48,26 +52,36 @@ class AuthController extends BaseController
     public function register()
     {
         $name = $this->request->getPost('name');
+        $username = $this->request->getPost('username');
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
+        $phone = $this->request->getPost('phone');
+        $address = $this->request->getPost('address');
+        $role_id = 6;
 
         $userModel = model('UserModel');
 
-        $user = $userModel->where('email', $email)->first();
+        $user = $userModel->where('username', $username)->first();
 
         if ($user) {
-            return redirect()->to(base_url('register') . '?error=Email sudah terdaftar')->withInput();
+            return redirect()->to(base_url('register') . '?error=Username sudah terdaftar')->withInput();
         }
 
-        $userModel->save([
-            'name' => $name,
-            'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-        ]);
+        try {
+            $userModel->insert([
+                'name' => $name,
+                'username' => $username,
+                'email' => $email,
+                'password' => $password,
+                'phone' => $phone,
+                'address' => $address,
+                'role_id' => $role_id,
+            ]);
 
-        return view('login', [
-            'success' => 'Registrasi berhasil',
-        ]);
+            return redirect()->to(base_url('login') . '?success=Registrasi berhasil, silahkan login');
+        } catch (\Exception $e) {
+            return redirect()->to(base_url('register') . '?error=' . $e->getMessage())->withInput();
+        }
     }
 
     public function logout()

@@ -78,7 +78,7 @@
                             <th class="px-4 py-2">Stok Awal</th>
                             <th class="px-4 py-2">Satuan</th>
                             <th class="px-4 py-2">Kategori</th>
-                            <th class="px-4 py-2 max-lg:hidden">Tgl. Dibuat</th>
+                            <th class="px-4 py-2">Tgl. Dibuat</th>
                             <th class="px-4 py-2">Aksi</th>
                         </tr>
                     </thead>
@@ -95,11 +95,11 @@
                                     <div class="flex items-center gap-2.5">
                                         <!-- image -->
                                         <?php if (isset($item['image'])) { ?>
-                                            <div class="size-[40px] bg-slate-500 rounded-lg relative">
+                                            <div class="size-[40px] bg-slate-500 rounded-lg relative aspect-square">
                                                 <img src="<?php echo "../uploads/" . $item['image']; ?>" alt="Image" class="object-cover w-full h-full rounded-lg">
                                             </div>
                                         <?php } else { ?>
-                                            <div class="size-[40px] bg-slate-500 rounded-lg relative">
+                                            <div class="size-[40px] bg-slate-500 rounded-lg relative aspect-square">
                                                 <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-[20px] fill-slate-200">
                                                         <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd" />
@@ -112,21 +112,21 @@
                                     </div>
                                 </td>
                                 <td class="px-4 py-2 border">
-                                    <?php echo $item['purchase_price']; ?>
+                                    Rp <?php echo number_format($item['purchase_price'], 0, ',', '.'); ?>
                                 </td>
-                                <td class="px-4 py-2 border max-lg:hidden">
-                                    <?php echo $item['selling_price']; ?>
+                                <td class="px-4 py-2 border">
+                                    Rp <?php echo number_format($item['selling_price'], 0, ',', '.'); ?>
                                 </td>
-                                <td class="px-4 py-2 border max-lg:hidden">
+                                <td class="px-4 py-2 border">
                                     <?php echo $item['initial_stock']; ?>
                                 </td>
-                                <td class="px-4 py-2 border max-lg:hidden">
+                                <td class="px-4 py-2 border">
                                     <?php echo $item['unit']; ?>
                                 </td>
-                                <td class="px-4 py-2 border max-lg:hidden">
+                                <td class="px-4 py-2 border">
                                     <?php echo $item['category']; ?>
                                 </td>
-                                <td class="px-4 py-2 border max-lg:hidden">
+                                <td class="px-4 py-2 border">
                                     <?php echo $item['created_at']; ?>
                                 </td>
                                 <td class="px-4 py-2 border">

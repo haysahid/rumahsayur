@@ -15,6 +15,8 @@ $routes->get('logout', 'AuthController::logout');
 
 $routes->get('dashboard', 'DashboardController::index');
 $routes->get('user', 'UserController::index');
+$routes->get('user/update/(:num)', 'UserController::updateView/$1');
+$routes->post('user/update-action/(:num)', 'UserController::update/$1');
 $routes->get('user/delete/(:num)', 'UserController::delete/$1');
 $routes->get('store', 'StoreController::index');
 $routes->get('product', 'ProductController::index');
