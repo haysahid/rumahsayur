@@ -1,4 +1,6 @@
 <nav class="">
+    <?php $roleId = session()->get('role_id'); ?>
+
     <div class="flex items-center justify-between px-6 md:px-[10%] py-5 bg-white shadow-sm">
         <div>
             <a href="<?= base_url('/') ?>" class="text-lg font-semibold text-green-600">Rumah Sayur</a>
@@ -6,7 +8,6 @@
         <div class="flex items-center justify-center gap-8 max-md:hidden">
             <div class="flex flex-col items-center justify-center gap-8 md:flex-row">
                 <?php
-                $roleId = session()->get('role_id');
                 if ($roleId == 1 || $roleId == 2) { ?>
                     <a href="<?= base_url('dashboard') ?>" class="text-slate-600 hover:text-green-500">Dashboard</a>
                     <a href="<?= base_url('user') ?>" class="text-slate-600 hover:text-green-500">Pengguna</a>
@@ -40,13 +41,17 @@
             </div>
         </div>
 
-        <div class="relative flex items-center gap-8 md:hidden">
-            <button id="menu-toggle" class="focus:outline-none">
-                <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
+        <?php if ($roleId) { ?>
+            <div class="relative flex items-center gap-8 md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        <?php } else { ?>
+            <a href="<?= base_url('login') ?>" class="text-slate-600 hover:text-green-500 md:hidden">Login</a>
+        <?php } ?>
     </div>
 
     <div id="menu-dropdown" class="hidden w-full h-full gap-8 bg-white shadow-md">
